@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Untitled Page</title>
+</h:head>
+<h:body>
+	<form id="form1">
+		<div>
+			<table width="400" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="90">Username :</td>
+					<td width="10"></td>
+					<td><h:inputText id="txtUser" width="150" value="#{loginBacking.textUser}" /></td>
+				</tr>
+				<tr>
+					<td>Password :</td>
+					<td width="10"></td>
+					<td><h:inputSecret id="txtPassword" width="150" value="#{loginBacking.textPassword}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td width="10"></td>
+					<td><h:commandButton id="cmdLogin" value="Login" actionListener="#{loginBacking.processLogin}" /></td>
+				</tr>
+			</table>
+
+			<div id="divErrorMessage" />
+		</div>
+
+	</form>
+</h:body>
+</html>

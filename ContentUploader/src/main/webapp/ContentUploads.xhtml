@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:tds="http://airast.org/jsfcustom"
+	xmlns:p="http://java.sun.com/jsf/passthrough" xmlns:t="http://myfaces.apache.org/tomahawk">
+<h:head>
+	<title>Content Uploads</title>
+	<link type="text/css" rel="stylesheet" 	href="styles/content-uploader.css" />
+	<script type="text/javascript">
+		function showLoader() {
+			var ldiv = document.getElementById('loaderDiv');
+			ldiv.style.display='block';
+		}
+	</script>
+</h:head>
+<h:body>
+	<h:form id="form1" enctype="multipart/form-data">
+        <a href="Default.xhtml"> BACK</a><br />
+        <br />
+        <div>
+            <b>Extraction Path:</b> <h:outputText id="lblExtractPath" value="#{contentUploadBacking.lblExtractPath}"/> <br />
+            <b>Upload Path:</b> <h:outputText id="lblUploadPath" value="#{contentUploadBacking.lblUploadPath}"/> <br />
+            <b>Item Bank Server:</b> <h:outputText id="lblIBServer" value="#{contentUploadBacking.lblIBServer}"/> <br />
+            <b>Item Bank DB:</b> <h:outputText id="lblIBDB" value="#{contentUploadBacking.lblIBDB}"/>
+             <h:commandButton id="btnContentSize" value="Update Content Size" onclick="showLoader()" action="#{contentUploadBacking.btnUpdateContentSize_OnClick()}" >
+	        </h:commandButton>  
+            <!-- <asp:Button id="btnContentSize" Text="Update Content Size"  /> -->
+            <h:outputText id="lblContentSize"  value="#{contentUploadBacking.lblContentSize}"/>
+        </div>
+        <input type="hidden" name="name" value="#{contentUploadBacking.connectionName}" ></input>
+        <br />
+        <div id="loaderDiv" class="loader" style="display:none"></div>
+        <h:messages id="displayMessage" />
+        <div id="zipUpload">
+            <div>
+                <span><b>Upload</b></span><br />
+                 <!-- <asp:FileUpload ID="fuZip" runat="server" />  -->
+		            <t:inputFileUpload value="#{contentUploadBacking.uploadedFile}" storage="default"/>
+		            <h:commandButton id="btnUpload" value="Upload Zip" onclick="showLoader()" action="#{contentUploadBacking.uploadFile}" >
+		            </h:commandButton>
+            </div>
+        </div>
+        <br />
+         
+        <b>Uploads:</b>
+        <div id="zipList">
+        		<t:dataTable value="#{contentUploadBacking.fileList}" var="fileList" border="1" sortColumn="#{contentUploadBacking.sortColumn}"  sortAscending="#{contentUploadBacking.sortAscending}">
+       				 <t:column defaultSorted="true" sortable="true">
+       				 	 
+		                  <f:facet name="header" >
+		                      	<h:outputText value="Name"/>
+		                  </f:facet>    
+		                  <h:outputText value="#{fileList.fileName}"/>
+		              </t:column>
+		              <t:column sortable="true" sortPropertyName="fileSizeBytes">
+		                  <f:facet name="header" >
+			                      	<h:outputText value="Size"/>
+		                  </f:facet>    
+		                  <h:outputText value="#{fileList.fileSize}"/>
+		              </t:column>
+		              <t:column sortable="true" sortPropertyName="dateUploaded">
+		                  <f:facet name="header">
+		                  			<h:outputText value="Date"/>
+		                  </f:facet>    
+		                  <h:outputText value="#{fileList.dateDisplayed}"/>
+		              </t:column>
+		              <t:column>
+		                  <h:commandLink onclick="showLoader()" action="#{contentUploadBacking.onClick_Delete(fileList.fileName)}">Delete
+		                  	
+		                  </h:commandLink>
+		              </t:column>
+		              <t:column>
+		                 <h:outputLink value="ContentPublish.xhtml?name=#{contentUploadBacking.connectionName}&amp;file=#{fileList.fileName}">Publish</h:outputLink>
+		              </t:column>
+	          	</t:dataTable>
+		</div>
+		
+        <br />     
+        <h:commandButton id="btnClearExtract" value="Clear Extractions" onclick="showLoader()" action="#{contentUploadBacking.btnClearExtract_OnClick()}" >
+        	
+        </h:commandButton>  
+	</h:form>
+</h:body>
+</html>

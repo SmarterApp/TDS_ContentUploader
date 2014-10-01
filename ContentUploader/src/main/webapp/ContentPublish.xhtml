@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:tds="http://airast.org/jsfcustom"
+	xmlns:p="http://java.sun.com/jsf/passthrough" xmlns:t="http://myfaces.apache.org/tomahawk">
+<h:head>
+	<title>Content Uploads</title>
+	<link type="text/css" rel="stylesheet" 	href="styles/content-uploader.css" />
+	<script type="text/javascript">
+		function showLoader() {
+			var ldiv = document.getElementById('loaderDiv');
+			ldiv.style.display='block';
+		}
+	</script>
+</h:head>
+<h:body>
+	<h:form id="form1" >
+		<h:messages id="displayMessage" />
+		<h:panelGroup layout="block" id="contentPublishResponse" rendered="false">
+			<h:outputText id="contentPublishResponseText" value="#{contentPublishBacking.htmlResponse}" escape="false"></h:outputText>
+		</h:panelGroup>
+		<h:panelGroup layout="block" id="pnlActions">
+			Are you ready to publish the file #{contentPublishBacking.zipFileName}?
+			<h:commandButton value="Start" id="btnPublish" action="#{contentPublishBacking.btnPublish_OnClick()}" onclick="this.disabled=true;showLoader();" oncomplete="this.disabled=false;">
+				<f:param name="file" value="#{param['file']}" />
+				<f:param name="name" value="#{param['name']}" />
+			</h:commandButton>
+		</h:panelGroup>
+		<div id="loaderDiv" class="loader" style="display:none"></div>
+		<br/>
+		<h:panelGroup id="pnlReview" rendered="false">
+			Finished! 
+			<a href="ContentUploads.xhtml?name=#{param['name']}">BACK</a>
+		</h:panelGroup>
+
+	</h:form>
+</h:body>
+</html>

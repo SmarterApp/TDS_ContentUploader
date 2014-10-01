@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<annotation-driven />
+	<context:annotation-config />
+	<context:component-scan base-package="tds.ContentUploader.Web"/>
+	<context:property-placeholder location="classpath:settings.xml" ignore-unresolvable="true" order="900" />
+		
+		
+	<beans:import resource="classpath:opentestsystem.shared.common-context-module.xml" />
+	<beans:import resource="classpath:opentestsystem.shared.security-context-module.xml" />
+	<beans:import resource="classpath:opentestsystem.shared.db-context-module.xml" />
+	<beans:import resource="classpath:opentestsystem.shared.web-context-module.xml" />
+	
+	<util:map id="connectionStringsMap"  map-class="java.util.HashMap">
+		<beans:entry key="ITEMBANK_TESTPACKAGE_TDSCORE" value="${tdscore.itembank}"/>
+	</util:map>
+	
+	<beans:bean id="itemBankConnections" class="tds.ContentUploader.Web.ItemBankConnections">
+		<beans:constructor-arg ref="connectionStringsMap"/>
+	</beans:bean>
+	
+	<beans:bean factory-bean="appSettings" factory-method="updateProperties" lazy-init="false">
+		<beans:constructor-arg>
+			<util:map map-class="java.util.HashMap">
+				<beans:entry key="uploadPath" value="${uploadPath}" />
+				<beans:entry key="extractPath" value="${extractPath}" />
+			</util:map>
+		</beans:constructor-arg>
+	</beans:bean>
+	
+	
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- TDSSettings bean. This gives access to clientname and any other info such as session type etc. -->
+	<beans:bean id="tdsSettings" class="TDS.Shared.Configuration.TDSSettings" scope="prototype" />
+	
+	<beans:bean id="_itemBankRepository" class="tds.ContentUploader.sql.ItemBankRepository" scope="prototype">
+	  <beans:property name="clientName" value="${ClientName}"/>
+	</beans:bean>	
+	
+	<beans:bean id="contentUploaderDLL" class="tds.ContentUploader.DLL.ContentUploaderDLL"/>
+	
+	<beans:bean id="itemBankManager" class="tds.ContentUploader.ItemBankManager"/>
+	
+	<!-- <jee:jndi-lookup id="applicationDataSource"
+	                 jndi-name="${student-sessiondb-jndi:java:/comp/env/jdbc/sessiondb}"
+	                 expected-type="javax.sql.DataSource" /> -->
+	<beans:bean id="abstractConnectionManager" class="AIR.Common.DB.AbstractConnectionManager">
+		<beans:property name="databaseDialect" value="${DBDialect}"/>
+		<beans:property name="dataSource"><beans:null/></beans:property>
+	</beans:bean>
+	
+	
+</beans:beans>

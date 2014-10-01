@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+	                    http://www.springframework.org/schema/context 
+	                    http://www.springframework.org/schema/context/spring-context.xsd
+	                    http://www.springframework.org/schema/util 
+	                    http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<import resource="classpath:/opentestsystem.shared.test-context-module.xml" />
+	<import resource="classpath:/opentestsystem.shared.db-context-module.xml" />
+	<import resource="classpath:/modules/test-context-schema-deployer.xml" />
+	<import resource="classpath:/modules/test-context-scripts.xml" />
+		                    
+	<!-- <context:component-scan base-package="tds.ContentUploader.DLL"/> -->
+	 <context:property-placeholder
+		location="properties.xml"
+		order="900"
+		ignore-unresolvable="true"
+	 />
+	<bean id="tdsSettings" class="TDS.Shared.Configuration.TDSSettingsNoWeb" scope="prototype"/>
+<!-- 	<bean id="_itemBankRepository" class="tds.ContentUploader.sql.ItemBankRepository" >
+	  <property name="clientName" value="${clientName}"/>
+	</bean>	
+ -->	
+	<bean id="_dll" class="tds.ContentUploader.DLL.ContentUploaderDLL">
+	</bean>
+    <alias alias="applicationDataSource" name="itembankSchema" /> 
+    <bean id="abstractConnectionManager" class="AIR.Common.DB.AbstractConnectionManager">
+		<property name="databaseDialect" value="${DBDialect}"/>
+		<property name="dataSource" ref="applicationDataSource"/>
+	</bean>
+</beans>

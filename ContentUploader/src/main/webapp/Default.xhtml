@@ -1,0 +1,29 @@
+<!-- Shiva: DO NOT REFORMAT -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:tds="http://airast.org/jsfcustom"
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:p="http://java.sun.com/jsf/passthrough">
+<h:head>
+	<title></title>
+	<script type="text/javascript">
+        function closeWindow()
+        {
+            this.focus(); self.opener = this; window.open('', '_parent', ''); window.close();
+        }
+    </script>
+</h:head>
+<h:body>
+	<h:form id="form1">
+        
+         <a href="javascript:closeWindow()">CLOSE</a><br />
+
+        <h3>Select Item Bank:</h3>
+        <ul>
+            <ui:repeat var="connectionInfo" value="#{defaultPageBacking.itemBanks}">
+                <li><a href="ContentUploads.xhtml?name=#{connectionInfo.name}">#{connectionInfo.label}</a></li>
+             </ui:repeat>
+        </ul>
+	</h:form>
+</h:body>
+</html>

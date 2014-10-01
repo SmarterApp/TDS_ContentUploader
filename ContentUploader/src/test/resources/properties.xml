@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="EnableLoadData">false</entry>
+	 <!--  
+	<entry key="TDSSessionDBName">TDSCore_Test_Session_2012</entry>
+	<entry key="ItembankDBName">TDSCore_Test_Itembank_2012</entry>
+	<entry key="TDSArchiveDBName">archive</entry>
+	<entry key="TDSConfigsDBName">TDSCore_Test_Configs_2012</entry>
+
+	<entry key="clientName">Minnesota_PT</entry>
+	<entry key="jdbc.url">jdbc:sqlserver://38.118.82.146;DatabaseName=TDSCore_Test_Itembank_2012</entry>
+	 <entry key="jdbc.userName">dbtds</entry>
+    <entry key="jdbc.password">KOJ89238876234rUHJ</entry>
+    <entry key="DBDialect">SQLSERVER</entry>
+    -->
+	  
+	<entry key="TDSSessionDBName">session</entry>
+	<entry key="ItembankDBName">itembank</entry>
+	<entry key="TDSArchiveDBName">archive</entry>
+	<entry key="TDSConfigsDBName">configs</entry>
+
+	<entry key="clientName">SBAC_PT</entry>
+	<entry key="jdbc.url">jdbc:mysql://127.0.0.1:3306</entry>
+	 <entry key="jdbc.userName">root</entry>
+    <entry key="jdbc.password">root</entry>
+    <entry key="DBDialect">MYSQL</entry>
+    <entry key="AdditionalUrlParm">?useServerPrepStmts=false&amp;rewriteBatchedStatements=true</entry>
+    
+    
+	<entry key="keepSchema">true</entry>
+</properties>

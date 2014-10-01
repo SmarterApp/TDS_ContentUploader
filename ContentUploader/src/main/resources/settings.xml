@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="IsCheckinSite">false</entry>
+	<entry key="DONOT_Distributed">true</entry>
+	<entry key="ClientName">SBAC_PT</entry>
+	<entry key="ClientQueryString">true</entry>
+	<entry key="ClientCookie">true</entry>
+	<entry key="Appkey">Student</entry>
+	<entry key="EncryptedPassword">true</entry>
+	<entry key="RecordSystemClient">true</entry>
+	<entry key="AdminPassword">UnloadAppDomain1000tj</entry>
+	<entry key="SqlCommandTimeout">60</entry>
+	<entry key="AppName">Student</entry>
+	<entry key="SessionType">0</entry>	
+	<entry key="StateCode">MN</entry>
+	<entry key="DBDialect">MYSQL</entry>
+	
+		
+    <entry key="Debug.AllowFTP">true</entry>
+	
+	
+	<entry key="EnableLoadData">false</entry>
+	  
+	<entry key="TDSSessionDBName">session</entry>
+	<entry key="ItembankDBName">itembank</entry>
+	<entry key="TDSArchiveDBName">archive</entry>
+	<entry key="TDSConfigsDBName">configs</entry>
+	
+	
+	<!-- <entry key="uploadPath">C:\DataFiles\BB_Files\tds_airws_org\TDSCore_2012-2013\Uploads\</entry>
+	<entry key="extractPath">C:\DataFiles\BB_Files\tds_airws_org\TDSCore_2012-2013\Extractions\</entry>
+    	 -->		
+    <!-- <entry key="ITEMBANK_TDSCore_localhost">User ID=root;password=root;Initial Catalog=itembank;Data Source=localhost:3306;Connect Timeout=60;url=jdbc:mysql://localhost:3306/itembank</entry>
+    <entry key="TDSCore_Test_Itembank_2012">User ID=dbtds;password=KOJ89238876234rUHJ;Initial Catalog=TDSCore_Test_Itembank_2012;Data Source=38.118.82.146;Connect Timeout=60;url=jdbc:sqlserver://38.118.82.146</entry>
+	<entry key="TDSCORE_ITEMBANK_TESTPACKAGE">User ID=dbsbac;password=osTyMhRM1C;Initial Catalog=tdscore_itembank_testpackage;Data Source=tds-db.dev.opentestsystem.org:3306;Connect Timeout=60;url=jdbc:mysql://tds-db.dev.opentestsystem.org:3306/tdscore_itembank_testpackage</entry>
+	 -->
+</properties>
