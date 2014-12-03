@@ -2,14 +2,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tds</groupId>
 	<artifactId>ContentUploader</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>R01.00.08</version>
 	<packaging>war</packaging>
 	<name>ContentUploader</name>
 	<description>ContentUploader</description>
 	<parent>
 		<groupId>org.opentestsystem.shared</groupId>
 		<artifactId>shared-master</artifactId>
-		<version>1.0.1-BUILD-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 
 	<licenses>
@@ -52,7 +52,7 @@
 		<dependency>
 			<groupId>org.opentestsystem.delivery</groupId>
 			<artifactId>item-renderer</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
