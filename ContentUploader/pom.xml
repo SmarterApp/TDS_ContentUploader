@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tds</groupId>
 	<artifactId>ContentUploader</artifactId>
-	<version>R01.00.11</version>
+	<version>R01.00.12</version>
 	<packaging>war</packaging>
 	<name>ContentUploader</name>
 	<description>ContentUploader</description>
