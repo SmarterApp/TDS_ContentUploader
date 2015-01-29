@@ -2,10 +2,10 @@
 
 The ContentUploader allows the following functions:
 
-* Upload the content file exported from Item Authoring (e.g. ITS) in zip format to the server file system.
+* Upload the content file exported from Item Authoring (e.g. ITS) in ZIP format to the server file system.
 * Publish the content to the Server in appropriate file structure as configured in the itembank db.
 * Update the content size.
-* Delete the Extraction folder or zip file..
+* Delete the Extraction folder or zip file.
 
 
 ## License ##
