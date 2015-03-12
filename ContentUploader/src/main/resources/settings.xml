@@ -3,7 +3,8 @@
 <properties>
 <entry key="IsCheckinSite">false</entry>
 	<entry key="DONOT_Distributed">true</entry>
-	<entry key="ClientName">SBAC_PT</entry>
+	<!--  Client name needs to be set as parameter in tomcat configuration. JIRA# SB-1182 -->
+	<entry key="ClientName">${ContentUploader.ClientName}</entry>
 	<entry key="ClientQueryString">true</entry>
 	<entry key="ClientCookie">true</entry>
 	<entry key="Appkey">Student</entry>

@@ -33,6 +33,7 @@ The following parameters needs to be set inside context.xml of tomcat server.
 ```
 <Parameter name="uploadPath"  override="false" value="<upload_folder_filesystem_location>"/>
 <Parameter name="extractPath"  override="false" value="<extract_folder_filesystem_location>"/>
+<Parameter name="ContentUploader.ClientName"  override="false" value="<Client_Name>"/>
 <Parameter name="tdscore.itembank"  override="false" value="User ID=<username>;password=<password>;Initial Catalog=<schema>;Data Source=localhost:3306;Connect Timeout=60;url=jdbc:mysql://<database-url>/<itembank_schemaname>/>
 
 ```
