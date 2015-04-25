@@ -19,6 +19,7 @@
 	
 		
     <entry key="Debug.AllowFTP">true</entry>
+    <entry key="EncryptionKey">${ContentUploader.EncryptionKey}</entry>
 	
 	
 	<entry key="EnableLoadData">false</entry>
