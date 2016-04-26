@@ -15,7 +15,6 @@ This project is licensed under the [AIR Open Source License v1.0](http://www.sma
 We would be happy to receive feedback on its capabilities, problems, or future enhancements:
 
 * For general questions or discussions, please use the [Forum](http://forum.opentestsystem.org/viewforum.php?f=9).
-* Use the **Issues** link to file bugs or enhancement requests.
 * Feel free to **Fork** this project and develop your changes!
 
 ## Module Overview
@@ -23,7 +22,6 @@ We would be happy to receive feedback on its capabilities, problems, or future e
 ### Web
 
    Web module contains all the UI and implementation logic required for uploading and publishing content.
-
 
 ## Setup
 In general, build the code and deploy the WAR file.
@@ -44,13 +42,13 @@ The following parameters needs to be set inside context.xml of tomcat server.
 
 If building all components from scratch the following build order is needed:
 
-* sharedmultijardev
-* tdsdlldev
-* ItemRendererDev
+* sharedmultijar
+* tdsdll
+* ItemRenderer
 
 
 ## Dependencies
-ContentUploaderDev has a number of direct dependencies that are necessary for it to function.  These dependencies are already built into the Maven POM files.
+ContentUploader has a number of direct dependencies that are necessary for it to function.  These dependencies are already built into the Maven POM files.
 
 ### Compile Time Dependencies
 
