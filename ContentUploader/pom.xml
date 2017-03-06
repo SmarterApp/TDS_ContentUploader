@@ -6,11 +6,16 @@
 	<packaging>war</packaging>
 	<name>ContentUploader</name>
 	<description>ContentUploader</description>
+
 	<parent>
 		<groupId>org.opentestsystem.shared</groupId>
 		<artifactId>shared-master</artifactId>
-		<version>1.0.1-BUILD-SNAPSHOT</version>
+		<version>3.0.1</version>
 	</parent>
+
+	<properties>
+		<tds-dll.version>0.0.1-SNAPSHOT</tds-dll.version>
+	</properties>
 
 	<licenses>
 		<license>
@@ -20,6 +25,7 @@
 			<comments>Educational Online Test Delivery System Copyright (c) 2013 American Institutes for Research</comments>
 		</license>
 	</licenses>
+
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -74,6 +80,7 @@
 		<dependency>
 			<groupId>org.opentestsystem.delivery</groupId>
 			<artifactId>tds-dll-schemas</artifactId>
+			<version>${tds-dll.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
