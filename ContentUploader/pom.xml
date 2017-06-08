@@ -10,12 +10,12 @@
 	<parent>
 		<groupId>org.opentestsystem.shared</groupId>
 		<artifactId>shared-master</artifactId>
-		<version>3.0.6</version>
+		<version>3.1.0.RELEASE</version>
 	</parent>
 
 	<properties>
-		<item-renderer.version>3.0.9</item-renderer.version>
-		<tds-dll.version>3.0.1</tds-dll.version>
+		<item-renderer.version>3.1.0.RELEASE</item-renderer.version>
+		<tds-dll.version>3.1.0.RELEASE</tds-dll.version>
 	</properties>
 
 	<licenses>
