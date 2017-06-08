@@ -15,7 +15,7 @@
 
 	<properties>
 		<item-renderer.version>3.1.0.RELEASE</item-renderer.version>
-		<tds-dll.version>3.0.1</tds-dll.version>
+		<tds-dll.version>3.1.0.RELEASE</tds-dll.version>
 	</properties>
 
 	<licenses>
