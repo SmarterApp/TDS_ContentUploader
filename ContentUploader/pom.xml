@@ -14,8 +14,8 @@
 	</parent>
 
 	<properties>
-		<item-renderer.version>3.1.0.RELEASE</item-renderer.version>
-		<tds-dll.version>3.1.0.RELEASE</tds-dll.version>
+		<item-renderer.version>3.1.1.RELEASE</item-renderer.version>
+		<tds-dll.version>3.1.1.RELEASE</tds-dll.version>
 	</properties>
 
 	<licenses>
