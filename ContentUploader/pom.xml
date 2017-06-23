@@ -1,16 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>tds</groupId>
-	<artifactId>ContentUploader</artifactId>
-	<version>R01.00.52</version>
+	<groupId>org.opentestsystem.delivery</groupId>
+	<artifactId>content-uploader</artifactId>
+	<version>3.1.1.RELEASE</version>
 	<packaging>war</packaging>
-	<name>ContentUploader</name>
+	<name>content-uploader</name>
 	<description>ContentUploader</description>
+
 	<parent>
 		<groupId>org.opentestsystem.shared</groupId>
 		<artifactId>shared-master</artifactId>
-		<version>1.0.1</version>
+		<version>3.1.0.RELEASE</version>
 	</parent>
+
+	<properties>
+		<item-renderer.version>3.1.1.RELEASE</item-renderer.version>
+		<tds-dll.version>3.1.1.RELEASE</tds-dll.version>
+	</properties>
 
 	<licenses>
 		<license>
@@ -20,6 +26,7 @@
 			<comments>Educational Online Test Delivery System Copyright (c) 2013 American Institutes for Research</comments>
 		</license>
 	</licenses>
+
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -52,7 +59,7 @@
 		<dependency>
 			<groupId>org.opentestsystem.delivery</groupId>
 			<artifactId>item-renderer</artifactId>
-			<version>0.0.1</version>
+			<version>${item-renderer.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -74,6 +81,7 @@
 		<dependency>
 			<groupId>org.opentestsystem.delivery</groupId>
 			<artifactId>tds-dll-schemas</artifactId>
+			<version>${tds-dll.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -95,8 +103,29 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<finalName>ContentUploader</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
 
+	<scm>
+		<connection>scm:git:https://github.com/SmarterApp/TDS_ContentUploader.git</connection>
+		<developerConnection>scm:git:git://github.com/SmarterApp/TDS_ContentUploader.git</developerConnection>
+		<url>https://github.com/SmarterApp/TDS_ContentUploader</url>
+		<tag>3.1.1.RELEASE</tag>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>airdev-releases</name>
+			<url>https://airdev.jfrog.io/airdev/libs-releases-local</url>
+		</repository>
+	</distributionManagement>
 </project>
